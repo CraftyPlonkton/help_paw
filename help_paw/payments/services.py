@@ -16,15 +16,12 @@ from payments.yookassa_services import (add_webhooks_to_shelter,
 from shelters.models import Shelter
 from users.models import User
 
-logger = logging.getLogger('payments')
-
 
 def get_payment_confirm_url(amount: Decimal,
                             user: User,
                             shelter_id: int) -> str:
     """Создает запись пожертвования в БД,
     возвращает ссылку для подтверждения платежа."""
-    logger.debug(f'{user if user.is_authenticated else None}')
     oauth_token = get_object_or_404(YookassaOAuthToken, shelter=shelter_id)
     payment_obj = payment_create(amount, oauth_token.token, shelter_id)
     Donation.objects.create(
