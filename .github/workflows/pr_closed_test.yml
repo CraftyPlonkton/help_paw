@@ -82,10 +82,9 @@ jobs:
             echo REACT_APP_SERVER_TYPE=${{ secrets.REACT_APP_SERVER_TYPE_TEST }} >> .env
             echo YOOKASSA_CLIENT_ID=${{ secrets.YOOKASSA_CLIENT_ID }} >> .env
             echo YOOKASSA_CLIENT_SECRET=${{ secrets.YOOKASSA_CLIENT_SECRET }} >> .env
-            sudo docker login -u "${{ secrets.DOCKER_USERNAME }}" -p "${{ secrets.DOCKER_PASSWORD }}"
-            sudo docker-compose -f docker-compose-test.yml pull
-            sudo docker-compose -f docker-compose-test.yml stop
-            sudo docker-compose -f docker-compose-test.yml up -d
+            sudo docker-compose pull
+            sudo docker-compose stop
+            sudo docker-compose up -d
 
   send_message:
     runs-on: ubuntu-latest
