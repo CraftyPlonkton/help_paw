@@ -58,8 +58,8 @@ jobs:
           username: ${{ secrets.USER }}
           password: ${{ secrets.PASSWORD }}
           script: |
-            pwd
-            cd ~/test
+            touch i_m_was_here
+            cd test
             rm .env
             touch .env
             echo DB_ENGINE=${{ secrets.DB_ENGINE }} >> .env
