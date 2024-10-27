@@ -58,7 +58,7 @@ jobs:
           username: ${{ secrets.USER }}
           password: ${{ secrets.PASSWORD }}
           script: |
-            ls -a
+            pwd
             cd ~/test
             rm .env
             touch .env
