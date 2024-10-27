@@ -52,12 +52,11 @@ jobs:
     needs: build_and_push_to_docker_hub
     steps:
       - name: executing remote ssh commands to deploy
-        uses: appleboy/ssh-action@v1.1.0
+        uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.TEST_HOST }}
           username: ${{ secrets.USER }}
           password: ${{ secrets.PASSWORD }}
-          debug: true
           script: |
             ls -a
             cd ~/test
