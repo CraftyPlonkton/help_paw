@@ -33,7 +33,7 @@ jobs:
     needs: build_and_push_to_docker_hub
     steps:
       - name: executing remote ssh commands to deploy
-        uses: appleboy/ssh-action@master
+        uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USER }}
