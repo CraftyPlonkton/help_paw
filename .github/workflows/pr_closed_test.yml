@@ -58,7 +58,7 @@ jobs:
           username: ${{ secrets.USER }}
           password: ${{ secrets.PASSWORD }}
           script: |
-            touch i_m_was_here
+            touch im_was_here
             cd test
             rm .env
             touch .env
