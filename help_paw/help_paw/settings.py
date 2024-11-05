@@ -262,7 +262,6 @@ EMAIL_USE_SSL = os.getenv('EMAIL_USE_SSL') == 'True'
 EMAIL_USE_TLS = os.getenv('EMAIL_USE_TLS') == 'True'
 SERVER_EMAIL = EMAIL_HOST_USER
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
-SSL_CERT_FILE = certifi.where()
 
 SITE_NAME = "Лапки помощи"
 
